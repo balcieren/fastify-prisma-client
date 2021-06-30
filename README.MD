@@ -8,6 +8,14 @@ easy access to prisma client in request
 
 This package is for ease of access only so you must install prisma and @prisma/client.
 
+## Installation
+
+```bash
+yarn add fastify-prisma-client
+or
+npm install fastify-prisma-client
+```
+
 ## Usage
 
 Register plugin
