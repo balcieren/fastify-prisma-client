@@ -21,6 +21,8 @@ npm install fastify-prisma-client
 Register plugin
 
 ```js
+import fastifyPrisma from "fastify-prisma-client";
+
 fastify.register(fastifyPrisma);
 ```
 
