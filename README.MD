@@ -26,6 +26,14 @@ import fastifyPrisma from "fastify-prisma-client";
 fastify.register(fastifyPrisma);
 ```
 
+If you use with TypeScript , you have to give this type to avoid error
+
+```js
+import Fastify, { FastifyInstance } from "fastify";
+
+const fastify: FastifyInstance = Fastify();
+```
+
 Prisma client options are available and you can edit them
 
 ```js
