@@ -2,13 +2,16 @@
   "name": "fastify-prisma-client",
   "version": "1.0.2",
   "description": "Prisma Plugin for Fastify",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Eren BALCI",
   "license": "MIT",
   "private": false,
   "engines": {
     "node": ">=10"
+  },
+  "scripts": {
+    "build": "tsc -p ."
   },
   "repository": {
     "type": "git",
