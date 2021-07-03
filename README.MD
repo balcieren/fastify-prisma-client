@@ -6,7 +6,7 @@ easy access to prisma client in request
 
 ## Warning !
 
-This package is for ease of access only so you must install prisma and @prisma/client.
+This package is for ease of access only so you must install prisma.
 
 ## Installation
 
