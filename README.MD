@@ -11,9 +11,9 @@ This package is for ease of access only so you must install prisma.
 ## Installation
 
 ```bash
-yarn add fastify-prisma-client
+yarn add prisma fastify-prisma-client
 or
-npm install fastify-prisma-client
+npm install prisma fastify-prisma-client
 ```
 
 ## Usage
