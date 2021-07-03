@@ -26,10 +26,10 @@
   "devDependencies": {
     "@types/node": "^15.12.5",
     "fastify": "^3.18.1",
-    "typescript": "^4.3.4",
-    "@prisma/client": "^2.26.0"
+    "typescript": "^4.3.4"
   },
   "dependencies": {
-    "fastify-plugin": "^3.0.0"
+    "fastify-plugin": "^3.0.0",
+    "@prisma/client": "^2.26.0"
   }
 }
