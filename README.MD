@@ -16,6 +16,14 @@ or
 npm install prisma fastify-prisma-client
 ```
 
+## Do not forget prisma generate ❗
+
+```bash
+yarn prisma generate
+or
+npx prisma generate
+```
+
 ## Usage
 
 Register plugin
