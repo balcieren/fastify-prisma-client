@@ -48,6 +48,14 @@ Prisma client options are available and you can edit them
 fastify.register(fastifyPrisma, {});
 ```
 
+Use with fastify decorate
+
+```js
+fastify.get("/users", async (request, reply) => {
+  return await fastify.prisma.users.findMany();
+});
+```
+
 Use with request
 
 ```js
