@@ -15,16 +15,23 @@ const fastifyPrisma: FastifyPluginCallback<PrismaClientOptions> = (
     rejectOnNotFound: options?.rejectOnNotFound,
   });
   fastify.addHook("onReady", (next) => {
+    fastify.decorate("prisma", prisma);
     fastify.decorateRequest("prisma", prisma);
     next();
   });
   done();
 };
 
-export default fp(fastifyPrisma);
+export default fp(fastifyPrisma, {
+  fastify: "3.x",
+  name: "fastify-prisma-client",
+});
 
 declare module "fastify" {
   interface FastifyRequest {
+    prisma: PrismaClient;
+  }
+  interface FastifyInstance {
     prisma: PrismaClient;
   }
 }
