@@ -56,7 +56,7 @@ fastify.get("/users", async (request, reply) => {
 });
 ```
 
-Use with request
+Use with request decorate
 
 ```js
 fastify.get("/users", async (request, reply) => {
