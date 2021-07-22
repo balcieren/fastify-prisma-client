@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/npm/v/fastify-prisma-client.svg)](https://www.npmjs.com/package/fastify-prisma-client)
 
-easy access to prisma client in request
+easy access to prisma client
 
 ## Warning !
 
