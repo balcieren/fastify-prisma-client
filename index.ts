@@ -3,7 +3,7 @@ import fp from "fastify-plugin";
 import { PrismaClient } from "@prisma/client";
 import { PrismaClientOptions } from "@prisma/client/runtime";
 
-const fastifyPrisma: FastifyPluginCallback<PrismaClientOptions> = (
+const fastifyPrismaClient: FastifyPluginCallback<PrismaClientOptions> = (
   fastify,
   options,
   done
@@ -14,15 +14,13 @@ const fastifyPrisma: FastifyPluginCallback<PrismaClientOptions> = (
     errorFormat: options?.errorFormat,
     rejectOnNotFound: options?.rejectOnNotFound,
   });
-  fastify.addHook("onReady", (next) => {
-    fastify.decorate("prisma", prisma);
-    fastify.decorateRequest("prisma", prisma);
-    next();
-  });
+
+  fastify.decorate("prisma", prisma).decorateRequest("prisma", prisma);
+
   done();
 };
 
-export default fp(fastifyPrisma, {
+export default fp(fastifyPrismaClient, {
   fastify: "3.x",
   name: "fastify-prisma-client",
 });
