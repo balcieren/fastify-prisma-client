@@ -29,9 +29,9 @@ npx prisma generate
 Register plugin
 
 ```js
-import fastifyPrisma from "fastify-prisma-client";
+import fastifyPrismaClient from "fastify-prisma-client";
 
-fastify.register(fastifyPrisma);
+fastify.register(fastifyPrismaClient);
 ```
 
 If you use with TypeScript , you have to give this type to avoid error
@@ -45,14 +45,15 @@ const fastify: FastifyInstance = Fastify();
 Prisma client options are available and you can edit them
 
 ```js
-fastify.register(fastifyPrisma, {});
+fastify.register(fastifyPrismaClient, {});
 ```
 
 Use with fastify decorate
 
 ```js
 fastify.get("/users", async (request, reply) => {
-  return await fastify.prisma.users.findMany();
+  const users = await fastify.prisma.users.findMany();
+  return { users };
 });
 ```
 
@@ -60,7 +61,8 @@ Use with request decorate
 
 ```js
 fastify.get("/users", async (request, reply) => {
-  return await request.prisma.users.findMany();
+  const users = await request.prisma.users.findMany();
+  return { users };
 });
 ```
 
