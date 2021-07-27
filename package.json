@@ -30,6 +30,6 @@
   },
   "dependencies": {
     "fastify-plugin": "^3.0.0",
-    "@prisma/client": "^2.26.0"
+    "@prisma/client": "^2.28.0"
   }
 }
