@@ -10,27 +10,24 @@ export type FastifyPrismaClientOptions = {
   rejectOnNotFound: PrismaClientOptions["rejectOnNotFound"];
 };
 
-const prismaClient: FastifyPluginCallback<FastifyPrismaClientOptions> = (
-  fastify,
-  options,
-  next
-) => {
-  if (fastify.prisma) {
-    return next(new Error("fastify-prisma-client has been defined before"));
-  }
+const prismaClient: FastifyPluginCallback<Partial<FastifyPrismaClientOptions>> =
+  (fastify, options, next) => {
+    if (fastify.prisma) {
+      return next(new Error("fastify-prisma-client has been defined before"));
+    }
 
-  const prisma = new PrismaClient(options);
+    const prisma = new PrismaClient(options);
 
-  fastify
-    .decorate("prisma", prisma)
-    .decorateRequest("prisma", fastify.prisma)
-    .addHook("onClose", async (_, done) => {
-      await _.prisma.$disconnect();
-      done();
-    });
+    fastify
+      .decorate("prisma", prisma)
+      .decorateRequest("prisma", fastify.prisma)
+      .addHook("onClose", async (_, done) => {
+        await _.prisma.$disconnect();
+        done();
+      });
 
-  return next();
-};
+    return next();
+  };
 
 const fastifyPrismaClient = fp(prismaClient, {
   name: "fastify-prisma-client",
