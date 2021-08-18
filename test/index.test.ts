@@ -12,7 +12,7 @@ const buildApp = async (t: Tap.Test) => {
   return fastify;
 };
 
-tap.test("fastify-prisma-client", async (t) => {
+tap.test("fastify-prisma-client test", async (t) => {
   t.test("register plugin", async (t) => {
     const fastify = await buildApp(t);
 
