@@ -4,30 +4,35 @@ import { PrismaClient } from "@prisma/client";
 import { PrismaClientOptions } from "@prisma/client/runtime";
 
 export type FastifyPrismaClientOptions = {
-  datasources: PrismaClientOptions["datasources"];
-  errorFormat: PrismaClientOptions["errorFormat"];
-  log: PrismaClientOptions["log"];
-  rejectOnNotFound: PrismaClientOptions["rejectOnNotFound"];
+  datasources?: PrismaClientOptions["datasources"];
+  errorFormat?: PrismaClientOptions["errorFormat"];
+  log?: PrismaClientOptions["log"];
+  rejectOnNotFound?: PrismaClientOptions["rejectOnNotFound"];
 };
 
-const prismaClient: FastifyPluginCallback<Partial<FastifyPrismaClientOptions>> =
-  (fastify, options, next) => {
-    if (fastify.prisma) {
-      return next(new Error("fastify-prisma-client has been defined before"));
-    }
+const prismaClient: FastifyPluginCallback<FastifyPrismaClientOptions> = async (
+  fastify,
+  options,
+  next
+) => {
+  if (fastify.prisma) {
+    return next(new Error("fastify-prisma-client has been defined before"));
+  }
 
-    const prisma = new PrismaClient(options);
+  const prisma = new PrismaClient(options);
 
-    fastify
-      .decorate("prisma", prisma)
-      .decorateRequest("prisma", fastify.prisma)
-      .addHook("onClose", async (_, done) => {
-        await _.prisma.$disconnect();
-        done();
-      });
+  await prisma.$connect();
 
-    return next();
-  };
+  fastify
+    .decorate("prisma", prisma)
+    .decorateRequest("prisma", fastify.prisma)
+    .addHook("onClose", async (fastify, done) => {
+      await fastify.prisma.$disconnect();
+      done();
+    });
+
+  next();
+};
 
 const fastifyPrismaClient = fp(prismaClient, {
   name: "fastify-prisma-client",

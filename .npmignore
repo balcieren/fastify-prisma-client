@@ -1,4 +1,5 @@
 index.ts
-README.MD
 test
 .nyc_output
+.env
+yarn.lock
