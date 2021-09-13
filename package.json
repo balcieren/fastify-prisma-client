@@ -27,14 +27,14 @@
   "devDependencies": {
     "@types/node": "^16.6.1",
     "@types/tap": "^15.0.5",
-    "fastify": "^3.20.2",
-    "prisma": "^3.0.1",
+    "fastify": "^3.21.0",
+    "prisma": "^3.0.2",
     "tap": "^15.0.9",
     "ts-node": "^10.2.1",
-    "typescript": "^4.3.5"
+    "typescript": "^4.4.3"
   },
   "dependencies": {
-    "@prisma/client": "^3.0.1",
+    "@prisma/client": "^3.0.2",
     "fastify-plugin": "^3.0.0"
   }
 }
