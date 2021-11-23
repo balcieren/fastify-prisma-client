@@ -7,6 +7,7 @@
   "author": "Eren BALCI",
   "license": "MIT",
   "private": false,
+  "homepage": "https://github.com/balcieren/fastify-prisma-client",
   "engines": {
     "node": ">=10"
   },
