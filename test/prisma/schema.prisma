@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgres://admin:1234@localhost:5432/fastify-prisma-client?sslmode=disable"
 }
 
 generator client {
