@@ -1,14 +1,9 @@
-import { FastifyPluginCallback } from "fastify";
-import fp from "fastify-plugin";
 import { PrismaClient } from "@prisma/client";
 import { PrismaClientOptions } from "@prisma/client/runtime";
+import { FastifyPluginCallback } from "fastify";
+import fp from "fastify-plugin";
 
-export type FastifyPrismaClientOptions = {
-  datasources?: PrismaClientOptions["datasources"];
-  errorFormat?: PrismaClientOptions["errorFormat"];
-  log?: PrismaClientOptions["log"];
-  rejectOnNotFound?: PrismaClientOptions["rejectOnNotFound"];
-};
+export type FastifyPrismaClientOptions = PrismaClientOptions;
 
 const prismaClient: FastifyPluginCallback<FastifyPrismaClientOptions> = async (
   fastify,
