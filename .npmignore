@@ -3,3 +3,4 @@ test
 .nyc_output
 .env
 yarn.lock
+pnpm-lock.yaml

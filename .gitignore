@@ -3,3 +3,4 @@ dist
 .env
 .nyc_output
 yarn.lock
+pnpm-lock.yaml
