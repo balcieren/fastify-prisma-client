@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "npx prisma db push --schema ./test/prisma/schema.prisma && npx tap -Rspec --coverage --ts ./test/**/*.test.ts"
+    "test": "npx prisma db push --schema ./test/prisma/schema.prisma && npx tap --ts ./test/**/*.test.ts"
   },
   "repository": {
     "type": "git",
@@ -26,16 +26,16 @@
     "fastify"
   ],
   "devDependencies": {
-    "@types/node": "^17.0.24",
-    "@types/tap": "^15.0.6",
-    "fastify": "^3.28.0",
-    "prisma": "^3.12.0",
-    "tap": "^16.0.1",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
+    "@types/node": "^17.0.42",
+    "@types/tap": "^15.0.7",
+    "fastify": "^4.0.1",
+    "prisma": "^3.15.1",
+    "tap": "^16.2.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
   },
   "dependencies": {
-    "@prisma/client": "^3.12.0",
+    "@prisma/client": "^3.15.1",
     "fastify-plugin": "^3.0.1"
   }
 }
