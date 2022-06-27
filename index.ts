@@ -23,7 +23,7 @@ const prismaClient: FastifyPluginCallback<FastifyPrismaClientOptions> = async (
 
   fastify
     .decorate("prisma", prisma)
-    .decorateRequest("prisma", fastify.prisma)
+    .decorateRequest("prisma", { getter: () => fastify.prisma })
     .addHook("onClose", async (fastify, done) => {
       await fastify.prisma.$disconnect();
       done();
