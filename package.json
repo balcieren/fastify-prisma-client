@@ -11,6 +11,7 @@
   "engines": {
     "node": ">=10"
   },
+  "files": ["dist"],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npx prisma db push --schema ./test/prisma/schema.prisma && npx tap --ts ./test/**/*.test.ts"
