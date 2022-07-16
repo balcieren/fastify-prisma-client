@@ -33,8 +33,8 @@ const prismaClient: FastifyPluginCallback<FastifyPrismaClientOptions> = async (
 };
 
 const fastifyPrismaClient = fp(prismaClient, {
+  fastify: "4.x",
   name: "fastify-prisma-client",
-  fastify: ">=3.x",
 });
 
 export default fastifyPrismaClient;
