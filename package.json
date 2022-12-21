@@ -29,16 +29,16 @@
     "fastify"
   ],
   "devDependencies": {
-    "@types/node": "^18.11.9",
+    "@types/node": "^18.11.17",
     "@types/tap": "^15.0.7",
-    "fastify": "^4.9.2",
-    "prisma": "^4.6.0",
-    "tap": "^16.3.0",
+    "fastify": "^4.10.2",
+    "prisma": "^4.8.0",
+    "tap": "^16.3.2",
     "ts-node": "^10.9.1",
-    "typescript": "^4.8.4"
+    "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@prisma/client": "^4.6.0",
-    "fastify-plugin": "^4.3.0"
+    "@prisma/client": "^4.8.0",
+    "fastify-plugin": "^4.4.0"
   }
 }
