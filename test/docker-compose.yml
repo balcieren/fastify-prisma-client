@@ -1,17 +1,17 @@
 version: "3.7"
 
 services:
-  fastify-prisma-client-db:
-    container_name: fastify-prims-client-db
-    image: postgres:latest
-    environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=1234
-      - POSTGRES_DB=fastify-prisma-client
-    ports:
-      - "5432:5432"
-    restart: always
-    volumes:
-      - database-data:/var/lib/postgresql/data/
+    fastify-prisma-client-db:
+        container_name: fastify-prims-client-db
+        image: postgres:latest
+        environment:
+            - POSTGRES_USER=admin
+            - POSTGRES_PASSWORD=1234
+            - POSTGRES_DB=fastify-prisma-client
+        ports:
+            - "5432:5432"
+        restart: always
+        volumes:
+            - database-data:/var/lib/postgresql/data/
 volumes:
-  database-data:
+    database-data:
