@@ -3,7 +3,7 @@ import { PrismaClientOptions } from "@prisma/client/runtime/library";
 import { FastifyPluginCallback } from "fastify";
 import fp from "fastify-plugin";
 
-export type FastifyPrismaClientOptions = PrismaClientOptions;
+export type FastifyPrismaClientOptions = Omit<PrismaClientOptions, "__internal">;
 
 const prismaClient: FastifyPluginCallback<FastifyPrismaClientOptions> = async (fastify, options, next) => {
     if (fastify.prisma) {
