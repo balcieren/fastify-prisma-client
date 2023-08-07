@@ -5,11 +5,7 @@ import fp from "fastify-plugin";
 
 export type FastifyPrismaClientOptions = PrismaClientOptions;
 
-const prismaClient: FastifyPluginCallback<FastifyPrismaClientOptions> = async (
-    fastify,
-    options,
-    next
-) => {
+const prismaClient: FastifyPluginCallback<FastifyPrismaClientOptions> = async (fastify, options, next) => {
     if (fastify.prisma) {
         return next(new Error("fastify-prisma-client has been defined before"));
     }
