@@ -1,44 +1,46 @@
 {
-  "name": "fastify-prisma-client",
-  "version": "5.0.0",
-  "description": "Prisma Plugin for Fastify",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "author": "Eren BALCI",
-  "license": "MIT",
-  "private": false,
-  "homepage": "https://github.com/balcieren/fastify-prisma-client",
-  "engines": {
-    "node": ">=10"
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "test": "npx prisma db push --schema ./test/prisma/schema.prisma && npx tap --ts --no-cov ./test/**/*.test.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/balcieren/fastify-prisma-client"
-  },
-  "keywords": [
-    "prisma-client",
-    "prisma",
-    "fastify-prisma-client",
-    "fastify"
-  ],
-  "devDependencies": {
-    "@types/node": "^18.17.3",
-    "@types/tap": "^15.0.8",
-    "fastify": "^4.21.0",
-    "prisma": "^5.1.1",
-    "tap": "^16.3.8",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.5"
-  },
-  "dependencies": {
-    "@prisma/client": "^5.1.1",
-    "fastify-plugin": "^4.5.1"
-  }
+    "name": "fastify-prisma-client",
+    "version": "5.0.0",
+    "description": "Prisma Plugin for Fastify",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "author": "Eren BALCI",
+    "license": "MIT",
+    "private": false,
+    "homepage": "https://github.com/balcieren/fastify-prisma-client",
+    "engines": {
+        "node": ">=10"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "test": "npx prisma db push --schema ./test/prisma/schema.prisma && npx tap --ts --no-cov ./test/**/*.test.ts",
+        "prettier": "prettier --write ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/balcieren/fastify-prisma-client"
+    },
+    "keywords": [
+        "prisma-client",
+        "prisma",
+        "fastify-prisma-client",
+        "fastify"
+    ],
+    "devDependencies": {
+        "@types/node": "^18.17.3",
+        "@types/tap": "^15.0.8",
+        "fastify": "^4.21.0",
+        "prettier": "^3.0.1",
+        "prisma": "^5.1.1",
+        "tap": "^16.3.8",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.9.5"
+    },
+    "dependencies": {
+        "@prisma/client": "^5.1.1",
+        "fastify-plugin": "^4.5.1"
+    }
 }
